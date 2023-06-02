@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stu.system.mapper.ClassesMapper">
+
+    <select id="findClassesPage" resultType="Classes">
+      select * from classes
+       ${ew.customSqlSegment}
+    </select>
+
+    <select id="findClassesByCtel" resultType="Classes">
+        select * from classes where ctel = #{0}
+    </select>
+
+    <select id="getClasses" resultType="Classes">
+        select * from classes
+    </select>
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stu.system.mapper.CompanysMapper">
+
+    <select id="findCompanysPage" resultType="Companys">
+      select * from companys
+       ${ew.customSqlSegment}
+    </select>
+
+    <select id="findCompanyByTel" resultType="Companys" >
+        select * from companys
+        where ctel = #{0}
+    </select>
+
+    <select id="findCompanysByTel" resultType="Companys">
+        select * from companys where ctel = #{0}
+    </select>
+
+</mapper>

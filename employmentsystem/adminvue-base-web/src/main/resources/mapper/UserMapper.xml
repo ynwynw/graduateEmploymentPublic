@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stu.system.mapper.UserMapper">
+
+    <select id="findUserPage" resultType="User">
+      select `id`, `sname`, `spwd`,`stel`
+          ,`simg`, `scollege`, `smajor`,`sclass`,`imgtype`,`sage`,`ssex`,
+          `sflag`, `status`, `classid`,`marjorid`,`collegeid`,`tripartiteagreement`,`imgtype2`
+           from users
+       ${ew.customSqlSegment}
+    </select>
+
+    <select id="findUserByTel" resultType="User" >
+        select `id`, `sname`, `spwd`,`stel`
+          ,`simg`, `scollege`, `smajor`,`sclass`,`imgtype`,`sage`,`ssex`,
+          `sflag`, `status`, `classid`,`marjorid`,`collegeid`,`tripartiteagreement`,`imgtype2`
+           from users
+        where stel = #{0}
+    </select>
+
+    <select id="findUsersByTel" resultType="User">
+        select * from users where stel = #{0}
+    </select>
+
+</mapper>

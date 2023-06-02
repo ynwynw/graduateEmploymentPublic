@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stu.system.mapper.InstructorsMapper">
+
+    <select id="findInstructorsPage" resultType="Instructors">
+      select * from instructors
+       ${ew.customSqlSegment}
+    </select>
+
+    <select id="findInstructorByTel" resultType="Instructors" >
+        select * from instructors
+        where stel = #{0}
+    </select>
+
+    <select id="findInstructorsByTel" resultType="Instructors">
+        select * from instructors where stel = #{0}
+    </select>
+
+</mapper>

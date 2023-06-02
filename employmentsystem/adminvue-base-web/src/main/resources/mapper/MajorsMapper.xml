@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stu.system.mapper.MajorsMapper">
+
+    <select id="findMajorsPage" resultType="Majors">
+      select * from majors
+       ${ew.customSqlSegment}
+    </select>
+
+    <select id="findMajorsByCbianhao" resultType="Majors">
+        select * from majors where cbianhao = #{0}
+    </select>
+
+    <select id="getMajors" resultType="Majors">
+        select * from majors
+    </select>
+
+</mapper>
